@@ -15,7 +15,10 @@ orbs:
 
 jobs:
   build:
-    executor: android/android
+    executor:
+      name: android/android-machine
+      resource-class: large
+      tag: default
     steps:
       - checkout
       - restore_cache:
