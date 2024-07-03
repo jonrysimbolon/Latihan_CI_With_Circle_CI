@@ -37,12 +37,10 @@ jobs:
           path: app/build/test-results
       - run:
           name: Check Code Coverage
-          command: ./gradlew jacocoTestReport
-      - store_test_results:
-          path: app/build/test-results
+          command: ./gradlew koverHtmlReport
       - store_artifacts:
-          path: app/build/reports/jacoco
-          destination: jacoco
+          path: build/reports/kover/html
+          destination: kover
       - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: artifact-file
